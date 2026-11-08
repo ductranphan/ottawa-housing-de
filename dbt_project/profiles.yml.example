@@ -1,0 +1,9 @@
+# Copy this file to your local dbt profiles directory as profiles.yml.
+# Add the DuckDB connection after installing dbt-duckdb.
+
+ottawa_housing:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "data/warehouse/ottawa_housing.duckdb"

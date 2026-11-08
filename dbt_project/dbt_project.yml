@@ -1,0 +1,13 @@
+# Project configuration scaffold.
+# Add model configuration after the dbt adapter and warehouse are set up.
+name: "ottawa_housing"
+version: "1.0.0"
+config-version: 2
+
+profile: "ottawa_housing"
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+macro-paths: ["macros"]
