@@ -86,3 +86,239 @@ https://docs.getdbt.com/docs/configure-your-profile
 [0m18:53:40.489110 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206CBD12650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206CBD97E30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000206CBD63350>]}
 [0m18:53:40.489605 [debug] [MainThread]: Flushing usage events
 [0m18:53:41.214574 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:31:46.276399 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6C48DA90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6EB0FED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6EB0FB10>]}
+
+
+============================== 19:31:46.296931 | 53543e35-170b-417d-b74a-8f19760b17a8 ==============================
+[0m19:31:46.296931 [info ] [MainThread]: Running with dbt=1.12.6
+[0m19:31:46.298232 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'maximum_seed_size_mib': '1', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'dbt_project', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'invocation_command': 'dbt run --project-dir dbt_project --profiles-dir dbt_project', 'use_experimental_parser': 'False', 'use_colors': 'True', 'log_path': 'dbt_project\\logs'}
+[0m19:31:46.890100 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '53543e35-170b-417d-b74a-8f19760b17a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6C9BA8B0>]}
+[0m19:31:46.973840 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '53543e35-170b-417d-b74a-8f19760b17a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6EAB9D00>]}
+[0m19:31:46.981910 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m19:31:47.479106 [debug] [MainThread]: checksum: 5d866d56c0e1304b2d4504dc07606511a971dae58fb2a561a1d9c8a4f5a18708, vars: {}, profile: ottawa_housing, target: dev, version: 1.12.6
+[0m19:31:47.481677 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m19:31:47.483112 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '53543e35-170b-417d-b74a-8f19760b17a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6F138B50>]}
+[0m19:31:51.528034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '53543e35-170b-417d-b74a-8f19760b17a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6F017E30>]}
+[0m19:31:51.613342 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project\target\manifest.json
+[0m19:31:51.619779 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project\target\semantic_manifest.json
+[0m19:31:51.698267 [debug] [MainThread]: Wrote artifact OsiDocument to dbt_project\target\osi_document.json
+[0m19:31:51.773116 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '53543e35-170b-417d-b74a-8f19760b17a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6F8689F0>]}
+[0m19:31:51.774128 [info ] [MainThread]: Found 2 models, 511 macros
+[0m19:31:51.775250 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '53543e35-170b-417d-b74a-8f19760b17a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6F50B040>]}
+[0m19:31:51.779302 [info ] [MainThread]: 
+[0m19:31:51.780077 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:31:51.780525 [info ] [MainThread]: 
+[0m19:31:51.781210 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m19:31:51.787129 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ottawa_housing'
+[0m19:31:51.980753 [debug] [ThreadPool]: Using duckdb connection "list_ottawa_housing"
+[0m19:31:51.981357 [debug] [ThreadPool]: On list_ottawa_housing: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "connection_name": "list_ottawa_housing"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"ottawa_housing"'
+    
+  
+  
+[0m19:31:51.981793 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:31:52.267780 [debug] [ThreadPool]: SQL status: OK in 0.286 seconds
+[0m19:31:52.272231 [debug] [ThreadPool]: On list_ottawa_housing: Close
+[0m19:31:52.274799 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_ottawa_housing, now create_ottawa_housing_main)
+[0m19:31:52.276417 [debug] [ThreadPool]: Creating schema "database: "ottawa_housing"
+schema: "main"
+"
+[0m19:31:52.298579 [debug] [ThreadPool]: Using duckdb connection "create_ottawa_housing_main"
+[0m19:31:52.299874 [debug] [ThreadPool]: On create_ottawa_housing_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "connection_name": "create_ottawa_housing_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='ottawa_housing'
+        and type != 'duckdb'
+    
+  
+[0m19:31:52.300574 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:31:52.309572 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m19:31:52.312363 [debug] [ThreadPool]: Using duckdb connection "create_ottawa_housing_main"
+[0m19:31:52.313161 [debug] [ThreadPool]: On create_ottawa_housing_main: BEGIN
+[0m19:31:52.317661 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m19:31:52.322760 [debug] [ThreadPool]: Using duckdb connection "create_ottawa_housing_main"
+[0m19:31:52.324307 [debug] [ThreadPool]: On create_ottawa_housing_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "connection_name": "create_ottawa_housing_main"} */
+
+    
+    
+        create schema if not exists "ottawa_housing"."main"
+    
+[0m19:31:52.327092 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m19:31:52.329100 [debug] [ThreadPool]: On create_ottawa_housing_main: COMMIT
+[0m19:31:52.329952 [debug] [ThreadPool]: Using duckdb connection "create_ottawa_housing_main"
+[0m19:31:52.330535 [debug] [ThreadPool]: On create_ottawa_housing_main: COMMIT
+[0m19:31:52.332249 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:31:52.333145 [debug] [ThreadPool]: On create_ottawa_housing_main: Close
+[0m19:31:52.340346 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_ottawa_housing_main'
+[0m19:31:52.346775 [debug] [ThreadPool]: Using duckdb connection "list_ottawa_housing_main"
+[0m19:31:52.347419 [debug] [ThreadPool]: On list_ottawa_housing_main: BEGIN
+[0m19:31:52.347967 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:31:52.351635 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m19:31:52.352444 [debug] [ThreadPool]: Using duckdb connection "list_ottawa_housing_main"
+[0m19:31:52.353058 [debug] [ThreadPool]: On list_ottawa_housing_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "connection_name": "list_ottawa_housing_main"} */
+select
+      'ottawa_housing' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'ottawa_housing'
+  
+[0m19:31:52.381917 [debug] [ThreadPool]: SQL status: OK in 0.028 seconds
+[0m19:31:52.384046 [debug] [ThreadPool]: On list_ottawa_housing_main: ROLLBACK
+[0m19:31:52.385397 [debug] [ThreadPool]: On list_ottawa_housing_main: Close
+[0m19:31:52.386856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '53543e35-170b-417d-b74a-8f19760b17a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6F887C50>]}
+[0m19:31:52.387662 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:31:52.388061 [debug] [MainThread]: On master: BEGIN
+[0m19:31:52.388352 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:31:52.389570 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:31:52.390083 [debug] [MainThread]: On master: COMMIT
+[0m19:31:52.390454 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:31:52.391007 [debug] [MainThread]: On master: COMMIT
+[0m19:31:52.391964 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:31:52.392466 [debug] [MainThread]: On master: Close
+[0m19:31:52.444619 [debug] [Thread-1 (]: Began running node model.ottawa_housing.stg_cmhc_rents
+[0m19:31:52.445667 [info ] [Thread-1 (]: 1 of 2 START sql view model main.stg_cmhc_rents ................................ [RUN]
+[0m19:31:52.447086 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.ottawa_housing.stg_cmhc_rents'
+[0m19:31:52.448044 [debug] [Thread-1 (]: Began compiling node model.ottawa_housing.stg_cmhc_rents
+[0m19:31:52.458549 [debug] [Thread-1 (]: Writing injected SQL for node "model.ottawa_housing.stg_cmhc_rents"
+[0m19:31:52.469532 [debug] [Thread-1 (]: Began executing node model.ottawa_housing.stg_cmhc_rents
+[0m19:31:52.472604 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cmhc_rents"
+[0m19:31:52.473826 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cmhc_rents: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "node_id": "model.ottawa_housing.stg_cmhc_rents"} */
+select database_name, type from duckdb_databases()
+[0m19:31:52.474522 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:31:52.478227 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m19:31:52.482216 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cmhc_rents"
+[0m19:31:52.483471 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cmhc_rents: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "node_id": "model.ottawa_housing.stg_cmhc_rents"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('ottawa_housing')
+                      and lower(schema_name) = lower('main')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m19:31:52.488956 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m19:31:52.543165 [debug] [Thread-1 (]: Writing runtime sql for node "model.ottawa_housing.stg_cmhc_rents"
+[0m19:31:52.552248 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cmhc_rents"
+[0m19:31:52.553279 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cmhc_rents: BEGIN
+[0m19:31:52.555162 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:31:52.556206 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cmhc_rents"
+[0m19:31:52.557129 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cmhc_rents: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "node_id": "model.ottawa_housing.stg_cmhc_rents"} */
+
+  
+  create view "ottawa_housing"."main"."stg_cmhc_rents__dbt_tmp" as (
+    select
+    cast(reference_year as integer) as reference_year,
+    cast(geography as varchar) as geography,
+    cast(structure_type as varchar) as structure_type,
+    cast(unit_type as varchar) as unit_type,
+    cast(rent_value as double) as rent_value,
+    cast(vector as varchar) as vector,
+    cast(source as varchar) as source
+from read_parquet(
+    'data/bronze/cmhc/rental_market/rents.parquet'
+)
+  );
+
+[0m19:31:52.564963 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:31:52.573715 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cmhc_rents"
+[0m19:31:52.574313 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cmhc_rents: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "node_id": "model.ottawa_housing.stg_cmhc_rents"} */
+alter view "ottawa_housing"."main"."stg_cmhc_rents__dbt_tmp" rename to "stg_cmhc_rents"
+[0m19:31:52.576027 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:31:52.595930 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cmhc_rents: COMMIT
+[0m19:31:52.596621 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cmhc_rents"
+[0m19:31:52.596998 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cmhc_rents: COMMIT
+[0m19:31:52.601644 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m19:31:52.613713 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cmhc_rents"
+[0m19:31:52.614622 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cmhc_rents: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "node_id": "model.ottawa_housing.stg_cmhc_rents"} */
+
+      drop view if exists "ottawa_housing"."main"."stg_cmhc_rents__dbt_backup" cascade
+    
+[0m19:31:52.617386 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:31:52.623630 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cmhc_rents: Close
+[0m19:31:52.629389 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '53543e35-170b-417d-b74a-8f19760b17a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6FBCD2E0>]}
+[0m19:31:52.630662 [info ] [Thread-1 (]: 1 of 2 OK created sql view model main.stg_cmhc_rents ........................... [[32mOK[0m in 0.18s]
+[0m19:31:52.632085 [debug] [Thread-1 (]: Finished running node model.ottawa_housing.stg_cmhc_rents
+[0m19:31:52.632728 [debug] [Thread-1 (]: Began running node model.ottawa_housing.stg_cpi
+[0m19:31:52.633664 [info ] [Thread-1 (]: 2 of 2 START sql view model main.stg_cpi ....................................... [RUN]
+[0m19:31:52.634602 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ottawa_housing.stg_cmhc_rents, now model.ottawa_housing.stg_cpi)
+[0m19:31:52.635114 [debug] [Thread-1 (]: Began compiling node model.ottawa_housing.stg_cpi
+[0m19:31:52.636955 [debug] [Thread-1 (]: Writing injected SQL for node "model.ottawa_housing.stg_cpi"
+[0m19:31:52.639442 [debug] [Thread-1 (]: Began executing node model.ottawa_housing.stg_cpi
+[0m19:31:52.645568 [debug] [Thread-1 (]: Writing runtime sql for node "model.ottawa_housing.stg_cpi"
+[0m19:31:52.648460 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cpi"
+[0m19:31:52.649857 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cpi: BEGIN
+[0m19:31:52.650837 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:31:52.652408 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:31:52.653389 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cpi"
+[0m19:31:52.654239 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cpi: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "node_id": "model.ottawa_housing.stg_cpi"} */
+
+  
+  create view "ottawa_housing"."main"."stg_cpi__dbt_tmp" as (
+    select 
+    cast(reference_date as date) as reference_date,
+    cast(cpi_value as double) as cpi_value,
+    cast(series_id as varchar) as series_id,
+    cast(source as varchar) as source,
+from read_parquet(
+    "data/bronze/bank_of_canada/cpi/cpi.parquet"
+)
+  );
+
+[0m19:31:52.662190 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:31:52.673330 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cpi"
+[0m19:31:52.674826 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cpi: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "node_id": "model.ottawa_housing.stg_cpi"} */
+alter view "ottawa_housing"."main"."stg_cpi__dbt_tmp" rename to "stg_cpi"
+[0m19:31:52.677562 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:31:52.681924 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cpi: COMMIT
+[0m19:31:52.683441 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cpi"
+[0m19:31:52.685641 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cpi: COMMIT
+[0m19:31:52.690985 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m19:31:52.696205 [debug] [Thread-1 (]: Using duckdb connection "model.ottawa_housing.stg_cpi"
+[0m19:31:52.697412 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cpi: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "ottawa_housing", "target_name": "dev", "node_id": "model.ottawa_housing.stg_cpi"} */
+
+      drop view if exists "ottawa_housing"."main"."stg_cpi__dbt_backup" cascade
+    
+[0m19:31:52.701539 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:31:52.708302 [debug] [Thread-1 (]: On model.ottawa_housing.stg_cpi: Close
+[0m19:31:52.710302 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '53543e35-170b-417d-b74a-8f19760b17a8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6FC6F390>]}
+[0m19:31:52.712191 [info ] [Thread-1 (]: 2 of 2 OK created sql view model main.stg_cpi .................................. [[32mOK[0m in 0.08s]
+[0m19:31:52.715518 [debug] [Thread-1 (]: Finished running node model.ottawa_housing.stg_cpi
+[0m19:31:52.721338 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:31:52.723081 [debug] [MainThread]: On master: BEGIN
+[0m19:31:52.724421 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:31:52.727083 [debug] [MainThread]: SQL status: OK in 0.003 seconds
+[0m19:31:52.728184 [debug] [MainThread]: On master: COMMIT
+[0m19:31:52.729785 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:31:52.731198 [debug] [MainThread]: On master: COMMIT
+[0m19:31:52.734135 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:31:52.735303 [debug] [MainThread]: On master: Close
+[0m19:31:52.736763 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:31:52.737774 [debug] [MainThread]: Connection 'create_ottawa_housing_main' was properly closed.
+[0m19:31:52.738520 [debug] [MainThread]: Connection 'list_ottawa_housing_main' was properly closed.
+[0m19:31:52.739179 [debug] [MainThread]: Connection 'model.ottawa_housing.stg_cpi' was properly closed.
+[0m19:31:52.740204 [info ] [MainThread]: 
+[0m19:31:52.741942 [info ] [MainThread]: Finished running 2 view models in 0 hours 0 minutes and 0.96 seconds (0.96s).
+[0m19:31:52.746321 [debug] [MainThread]: Command end result
+[0m19:31:52.848873 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_project\target\manifest.json
+[0m19:31:52.858432 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_project\target\semantic_manifest.json
+[0m19:31:52.867269 [debug] [MainThread]: Wrote artifact OsiDocument to dbt_project\target\osi_document.json
+[0m19:31:52.882893 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_project\target\run_results.json
+[0m19:31:52.884365 [info ] [MainThread]: 
+[0m19:31:52.885750 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:31:52.887120 [info ] [MainThread]: 
+[0m19:31:52.888069 [info ] [MainThread]: Done. PASS=2 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=2
+[0m19:31:52.890445 [debug] [MainThread]: Command `dbt run` succeeded at 19:31:52.890184 after 7.05 seconds
+[0m19:31:52.891020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6F7D93D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6F7D9ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000018B6EB5A6D0>]}
+[0m19:31:52.891515 [debug] [MainThread]: Flushing usage events
+[0m19:31:53.640591 [debug] [MainThread]: An error was encountered while trying to flush usage events
