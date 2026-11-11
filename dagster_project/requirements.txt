@@ -1,3 +1,6 @@
 pandera
 pytest
 dagster
+pandas
+pyarrow
+requests

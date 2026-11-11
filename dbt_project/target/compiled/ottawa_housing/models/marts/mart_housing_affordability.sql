@@ -24,6 +24,16 @@ cpi as (
         ) as previous_cpi
     from "ottawa_housing"."main"."int_annual_cpi"
 
+),
+
+income as (
+
+    select
+        reference_year,
+        geography,
+        income_value
+    from "ottawa_housing"."main"."stg_income"
+
 )
 
 select
@@ -33,6 +43,9 @@ select
     rents.unit_type,
     rents.rent_value,
     cpi.annual_average_cpi,
+    income.geography as income_geography,
+    income.income_value as annual_median_after_tax_income,
+    rents.rent_value * 12 as annual_rent,
 
     case
         when rents.previous_rent is not null
@@ -50,8 +63,14 @@ select
 
     rents.rent_value
         / nullif(cpi.annual_average_cpi, 0)
-        * 100 as rent_in_2002_cpi_dollars
+        * 100 as rent_in_2002_cpi_dollars,
+
+    rents.rent_value * 12
+        / nullif(income.income_value, 0)
+        * 100 as rent_burden_percent
 
 from rents
 inner join cpi
     on rents.reference_year = cpi.reference_year
+inner join income
+    on rents.reference_year = income.reference_year
