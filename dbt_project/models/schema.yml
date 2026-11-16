@@ -1,0 +1,89 @@
+version: 2
+
+models:
+  - name: stg_cpi
+    description: "Monthly Canadian CPI from the Bank of Canada."
+    columns:
+      - name: reference_date
+        data_tests:
+          - not_null
+          - unique
+
+      - name: cpi_value
+        data_tests:
+          - not_null
+
+      - name: source
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["bank_of_canada"]
+
+  - name: stg_cmhc_rents
+    description: "Ottawa-Gatineau rental observations from CMHC."
+    columns:
+      - name: reference_year
+        data_tests:
+          - not_null
+
+      - name: geography
+        data_tests:
+          - not_null
+
+      - name: rent_value
+        data_tests:
+          - not_null
+
+      - name: source
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["cmhc"]
+
+  - name: stg_income
+    description: "Median after-tax income for Ottawa-Gatineau."
+    columns:
+      - name: reference_year
+        data_tests:
+          - not_null
+
+      - name: income_value
+        data_tests:
+          - not_null
+
+      - name: source
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["statcan"]
+
+  - name: int_annual_cpi
+    description: "Annual average CPI calculated from monthly CPI."
+    columns:
+      - name: reference_year
+        data_tests:
+          - not_null
+          - unique
+
+      - name: annual_average_cpi
+        data_tests:
+          - not_null
+
+  - name: mart_housing_affordability
+    description: "Rent, income, inflation, and rent-burden metrics."
+    columns:
+      - name: reference_year
+        data_tests:
+          - not_null
+
+      - name: rent_value
+        data_tests:
+          - not_null
+
+      - name: annual_median_after_tax_income
+        data_tests:
+          - not_null
+
+      - name: rent_burden_percent
+        data_tests:
+          - not_null

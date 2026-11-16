@@ -4,11 +4,10 @@ select
     structure_type,
     unit_type,
     count(*) as row_count
-from {{ ref('mart_housing_affordability')}}
+from {{ ref('mart_housing_affordability')}}            
 group by 
-    reference_year, 
+    reference_year, 11
     geography,
     structure_type,
     unit_type
 having count(*) > 1
-
