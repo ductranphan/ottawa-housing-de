@@ -4,3 +4,4 @@ dagster
 pandas
 pyarrow
 requests
+dbt-duckdb
