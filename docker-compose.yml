@@ -6,7 +6,7 @@ services:
     working_dir: /app/dagster_project
     volumes:
       - ./data:/app/data
-    command: dagster asset materialize -m dagster_project.definitions --select '*'
+    command: dagster asset materialize -m dagster_project.dagster_project.definitions --select '*'
 
   dbt:
     build:
