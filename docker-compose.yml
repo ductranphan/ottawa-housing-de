@@ -1,0 +1,18 @@
+services:
+  dagster:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app/dagster_project
+    volumes:
+      - ./data:/app/data
+    command: dagster asset materialize -m dagster_project.definitions --select '*'
+
+  dbt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    volumes:
+      - ./data:/app/data
+    command: dbt build --project-dir dbt_project --profiles-dir dbt_project --no-partial-parse
