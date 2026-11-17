@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    working_dir: /app/dagster_project
+    working_dir: /app
     volumes:
       - ./data:/app/data
     command: dagster asset materialize -m dagster_project.dagster_project.definitions --select '*'
