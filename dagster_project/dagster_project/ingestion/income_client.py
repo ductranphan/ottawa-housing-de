@@ -5,10 +5,7 @@ import requests
 
 
 TABLE_ID = "11100238"
-WDS_URL = (
-    "https://www150.statcan.gc.ca/t1/wds/rest/"
-    f"getFullTableDownloadCSV/{TABLE_ID}/en"
-)
+DOWNLOAD_URL = f"https://www150.statcan.gc.ca/n1/tbl/csv/{TABLE_ID}-eng.zip"
 
 
 def _valid_cached_zip(path: Path) -> bool:
@@ -29,27 +26,12 @@ def download_income(output_dir: Path) -> Path:
     temporary_path = output_dir / f"{TABLE_ID}-eng.zip.tmp"
 
     headers = {
-        "Accept": "application/json",
+        "Accept": "application/zip",
         "User-Agent": "ottawa-housing-affordability-tracker/1.0",
     }
     try:
-        metadata_response = requests.get(
-            WDS_URL,
-            headers=headers,
-            timeout=(10, 60),
-        )
-        metadata_response.raise_for_status()
-        metadata = metadata_response.json()
-
-        if metadata.get("status") != "SUCCESS":
-            raise RuntimeError(f"Income table lookup failed: {metadata}")
-
-        download_url = metadata.get("object")
-        if not isinstance(download_url, str):
-            raise ValueError("Income response did not contain a download URL")
-
         data_response = requests.get(
-            download_url,
+            DOWNLOAD_URL,
             headers=headers,
             timeout=(10, 120),
         )
