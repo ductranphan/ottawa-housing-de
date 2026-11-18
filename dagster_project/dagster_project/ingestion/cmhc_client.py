@@ -1,4 +1,5 @@
 from pathlib import Path
+from zipfile import BadZipFile, ZipFile, is_zipfile
 
 import requests
 
@@ -10,6 +11,16 @@ WDS_URL = (
 )
 
 
+def _valid_cached_zip(path: Path) -> bool:
+    if not is_zipfile(path):
+        return False
+    try:
+        with ZipFile(path) as archive:
+            return archive.testzip() is None and f"{TABLE_ID}.csv" in archive.namelist()
+    except (OSError, BadZipFile):
+        return False
+
+
 def download_cmhc_rents(output_dir: Path) -> Path:
     """Download the CMHC-published rental table and save the raw ZIP."""
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -17,19 +28,36 @@ def download_cmhc_rents(output_dir: Path) -> Path:
     output_path = output_dir / f"{TABLE_ID}-eng.zip"
     temporary_path = output_dir / f"{TABLE_ID}-eng.zip.tmp"
 
-    metadata_response = requests.get(WDS_URL, timeout=(10, 60))
-    metadata_response.raise_for_status()
-    metadata = metadata_response.json()
+    headers = {
+        "Accept": "application/json",
+        "User-Agent": "ottawa-housing-affordability-tracker/1.0",
+    }
+    try:
+        metadata_response = requests.get(
+            WDS_URL,
+            headers=headers,
+            timeout=(10, 60),
+        )
+        metadata_response.raise_for_status()
+        metadata = metadata_response.json()
 
-    if metadata.get("status") != "SUCCESS":
-        raise RuntimeError(f"CMHC table lookup failed: {metadata}")
+        if metadata.get("status") != "SUCCESS":
+            raise RuntimeError(f"CMHC table lookup failed: {metadata}")
 
-    download_url = metadata.get("object")
-    if not isinstance(download_url, str):
-        raise ValueError("CMHC response did not contain a download URL")
+        download_url = metadata.get("object")
+        if not isinstance(download_url, str):
+            raise ValueError("CMHC response did not contain a download URL")
 
-    data_response = requests.get(download_url, timeout=(10, 120))
-    data_response.raise_for_status()
+        data_response = requests.get(
+            download_url,
+            headers=headers,
+            timeout=(10, 120),
+        )
+        data_response.raise_for_status()
+    except requests.RequestException:
+        if _valid_cached_zip(output_path):
+            return output_path
+        raise
 
     if not data_response.content:
         raise ValueError("CMHC returned an empty download")
