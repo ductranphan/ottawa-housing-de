@@ -11,3 +11,12 @@ seed-paths: ["seeds"]
 test-paths: ["tests"]
 snapshot-paths: ["snapshots"]
 macro-paths: ["macros"]
+
+models:
+  ottawa_housing:
+    staging:
+      +materialized: table
+    intermediate:
+      +materialized: table
+    marts:
+      +materialized: table
